@@ -1,0 +1,135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SeekMasterPage.master.cs" Inherits="SeekMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <link href="Iseek_StyleSheet.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table align="center">	
+	<tr>
+	<td>
+	 <center>
+	        <h1>ISEEK.com</h1> 
+			<p>"If opportunity doesn't knock, build a door."</p> 
+     </center>
+			
+       <center>
+	        <ul> 
+	        
+			<a Font-Size="Small" href="Iseek_home.aspx">Home</a>&nbsp;&nbsp;&nbsp;
+                <asp:DropDownList ID="ddlsearchjobs" runat="server" AppendDataBoundItems="True" 
+                    Font-Names="Bookman Old Style" Font-Bold="True" Font-Size="Small" 
+                    ForeColor="#516C00" 
+                    onselectedindexchanged="ddlsearchjobs_SelectedIndexChanged" 
+                    AutoPostBack="True">
+                    <asp:ListItem Value="0">Search Jobs</asp:ListItem>
+                    <asp:ListItem Value="1">IT</asp:ListItem>
+                    <asp:ListItem Value="2">Banking/Finance</asp:ListItem>
+                    <asp:ListItem Value="3">Marketing</asp:ListItem>
+                    <asp:ListItem Value="4">ITES/KPO</asp:ListItem>
+                </asp:DropDownList>
+			<a Font-Size="Small" href="#">About us</a>&nbsp;&nbsp;&nbsp;
+			<a Font-Size="Small" href="#">Contact</a>&nbsp;&nbsp;&nbsp;
+			
+		   </ul> 
+	   </center>
+		
+	 </td>
+	 </tr>
+	</table>
+	<!-- end #menu --> 
+	
+	
+	
+	<table align="center">
+	<tr>
+	  <td><asp:Label ID="lbljobsearch" runat="server" Text="Job Search" Font-Names="Comic Sans MS" Font-Bold="True"></asp:Label></td>
+      <td><asp:TextBox ID="txtkeyword" runat="server" Font-Names="Comic Sans MS">Keyword</asp:TextBox></td>
+      <td><asp:TextBox ID="txtExperience" runat="server" Font-Names="Comic Sans MS">Experience</asp:TextBox></td>
+      <td><asp:TextBox ID="txtLocation" runat="server" Font-Names="Comic Sans MS">Location</asp:TextBox></td>
+      <td><asp:Button ID="btnSearch" runat="server" Font-Names="Comic Sans MS" 
+              Text="Search" onclick="btnSearch_Click" /></td>
+	</tr>
+	</table>
+	
+ <fieldset>
+  <legend>Your Profile</legend>
+   <table align="left">
+    <tr>
+     <td>
+       <table align="right"><tr><td>
+       <asp:Label ID="Label9" runat="server" Text="Welcome"></asp:Label>
+       <asp:Label ID="user" runat="server" ></asp:Label>
+       <asp:LinkButton ID="logout" runat="server" onclick="logout_Click">LogOut</asp:LinkButton>
+       </td></tr></table>
+     </td>
+    </tr>
+       
+   <tr>
+    <td>
+     <fieldset>
+       <legend>View/Update Profile</legend>
+       <br />
+        <asp:HyperLink ID="personal" runat="server" Text="Personal Information" NavigateUrl="Viewgen.aspx"></asp:HyperLink><br />
+       <br />
+        <asp:HyperLink ID="edu" runat="server" Text="Educational Information" NavigateUrl="Viewseekedu.aspx"></asp:HyperLink><br />
+       <br />
+        <asp:HyperLink ID="exp" runat="server" Text="Experience" NavigateUrl="Viewseekexp.aspx" ></asp:HyperLink>
+        <br />
+        <br />
+        <asp:HyperLink ID="resume" runat="server" Text="Resume and Cover Letter" NavigateUrl="Viewseekres.aspx"></asp:HyperLink><br /><br />
+     </fieldset>
+     </td>
+   </tr>
+
+<tr>
+ <td><asp:HyperLink ID="HyperLink1" runat="server" Text="Change Password" 
+         NavigateUrl="Seekchangepwd.aspx"></asp:HyperLink><br /><br /></td>
+</tr>
+      
+<tr>
+    <td><asp:Label ID="Label2" runat="server" Text="Recruiter Views:"></asp:Label></td>
+    <td><asp:Label ID="recview" runat="server"></asp:Label></td>
+</tr>   
+   
+  <tr>
+     <td><asp:Button ID="view" runat="server" Text="View Details" onclick="view_Click" /></td>
+   </tr>
+   </table>
+      
+
+<table align="right">
+ <tr><td><asp:Label ID="Label4" runat="server" Text="Job Links"></asp:Label></td></tr>
+ <tr><td><asp:HyperLink ID="HyperLink2" runat="server" Text="View" 
+         NavigateUrl="Viewseekjobs.aspx"></asp:HyperLink></td></tr>   
+ <tr>
+  <td>  
+    <fieldset>
+    <legend>Job Application History</legend>
+    <asp:Label ID="Label5" runat="server" Text="Applied Today:"></asp:Label>
+    <br />
+    <asp:Label ID="Label6" runat="server" Text=""></asp:Label>
+    <br />
+    </fieldset>
+   </td>
+   </tr>
+   </table>
+ <table align="center">
+ <tr>
+ <td>
+ <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+ </asp:ContentPlaceHolder>
+ </td>
+ </tr>
+ </table>
+        
+  
+    </form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="EmpMasterPage.master.cs" Inherits="EmpMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <link href="Iseek_StyleSheet.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+ 
+       
+<table align="center">
+ <tr>
+   <td>
+    <center><h1>Iseek.com</h1>
+    <p>"If opportunity doesn't knock, build a door."</p>
+    <p>
+    <a Font-Size="Small" href="#">Home</a>&nbsp;
+    <a Font-Size="Small" href="#">About Us</a>&nbsp;
+    <a Font-size="Small" href="#">Contact Us</a>&nbsp;
+    <a Font-size="Small" href="#">LogOut</a>&nbsp;
+   </p>
+   </center>
+   </td>
+  </tr>
+ </table>
+   
+<table align="center" width="80%">
+<tr><td>
+<fieldset>
+<table align="left">
+    <tr>
+    <td>
+        <asp:HyperLink ID="view" runat="server" NavigateUrl="Empviewprofile1.aspx">View/Update Profile</asp:HyperLink>
+        <br />
+        <br />
+        <asp:HyperLink ID="chngpwd" runat="server" NavigateUrl="~/Empchangepwd.aspx"> Change Password</asp:HyperLink>
+        <br />
+        <br />
+        <asp:HyperLink ID="Seeker" runat="server" NavigateUrl="~/Viewseeker.aspx">Jobseeker Details</asp:HyperLink>
+    </td>
+    </tr>
+ </table>   
+ 
+    <table align="right">
+    <tr>
+     <td>
+         <asp:Label ID="lblwelcome" runat="server" Text="Welcome"></asp:Label>
+         <asp:Label ID="lbluser" runat="server" ></asp:Label>
+         <asp:LinkButton ID="logout" runat="server" onclick="logout_Click">LogOut</asp:LinkButton>
+     </td>
+    </tr>
+    <tr><td>
+        <asp:HyperLink ID="upload" runat="server" NavigateUrl="~/Uploadvacancies.aspx">Upload New Vacancies</asp:HyperLink>
+    </td></tr>
+    <tr><td>
+        <asp:HyperLink ID="update" runat="server" NavigateUrl="Updatevacancy.aspx" >Update Vacancies</asp:HyperLink>
+    </td></tr>
+    </table>
+         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+         </asp:ContentPlaceHolder>
+    
+    
+    <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+  </fieldset>
+  </td></tr>
+  </table>
+  </form>
+</body>
+</html>
